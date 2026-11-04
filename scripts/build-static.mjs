@@ -1,7 +1,7 @@
 // Builds a plain-HTML copy of the site in /out for previewing with VS Code Live Server.
 // The site needs no server (forms use mailto), so the result in /out can be uploaded to any web host.
 // The project/article detail routes are set aside during the build only while there are no projects/articles yet.
-import { renameSync, existsSync, rmSync, readFileSync } from "node:fs";
+import { renameSync, existsSync, rmSync, readFileSync, readdirSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 
 const isEmpty = (file, name) => new RegExp(`export const ${name}[^=]*=\\s*\\[\\s*\\];`).test(readFileSync(file, "utf8"));
@@ -25,6 +25,10 @@ try {
   status = r.status ?? 1;
 } finally {
   for (const [from, to] of moves) renameSync(to, from);
+}
+if (status === 0 && existsSync("out/work")) {
+  // Helper notes inside the picture folders are for you only; keep them off the live site.
+  for (const d of readdirSync("out/work", { withFileTypes: true })) if (d.isDirectory()) rmSync(`out/work/${d.name}/_FILE-NAMES.txt`, { force: true });
 }
 if (status === 0) spawnSync("node", ["scripts/relativize.mjs"], { stdio: "inherit" });
 if (status === 0) console.log("\nDone. Open the 'out' folder in VS Code and use Live Server on index.html (or just double-click index.html).");

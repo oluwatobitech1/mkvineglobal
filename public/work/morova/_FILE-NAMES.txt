@@ -1,0 +1,19 @@
+Morova: file names for this folder
+========================================
+Save each picture here with exactly these names (png, jpg, webp or avif):
+
+header                                                         Header: top image and the card cover on the Our Work page
+01-brand-research-and-visual-exploration                       Brand research and visual exploration
+02-logo-conceptualisation-and-sketching                        Logo conceptualisation and sketching
+03-logo-formation-and-refinement                               Logo formation and refinement
+04-geometric-logo-construction                                 Geometric logo construction
+05-logo-grid-and-proportion-system                             Logo grid and proportion system
+06-primary-and-secondary-logo-variations                       Primary and secondary logo variations
+07-brand-colour-system                                         Brand colour system
+08-typography-system                                           Typography system
+09-brand-visual-elements                                       Brand visual elements
+10-logo-clear-space-and-sizing                                 Logo clear space and sizing
+11-brand-consistency-and-usage-rules                           Brand consistency and usage rules
+12-brand-identity-presentation                                 Brand identity presentation
+footer                                                         Footer: closing image
+contact                                                        Contact: shown just above the contact band

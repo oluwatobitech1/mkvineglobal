@@ -6,7 +6,7 @@ import { join } from "node:path";
 //   header.png   top of the page (also the card cover)
 //   footer.png   bottom of the page
 //   contact.png  closing image, shown just above the contact band
-//   Website projects:  1.png, 2.png, 3.png ...  extra screens, in numeric order
+//   Website projects:  01-homepage.png, 02-divisions-page.png ...  extra screens, in numeric order (plain 1.png, 2.png also work)
 //   Branding projects: one image slot per item in `servicesDelivered`, matched by its position in the list:
 //        01.png, 01-b.png   -> item 1  (a second image for the same item)
 //        02-logo-grid.png   -> item 2  (anything after the number is free text, for your own reference)
@@ -25,9 +25,9 @@ export function getProjectImages(slug: string, sectionCount = 0): ProjectImages 
   const empty: ProjectImages = { shots: [], sections: Array.from({ length: sectionCount }, () => []) };
   const dir = join(process.cwd(), "public", "work", slug);
   if (!existsSync(dir)) return empty;
-  const files = readdirSync(dir).filter((f) => EXT.test(f)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
-  const url = (f: string) => `/work/${slug}/${f}`;
   const stem = (f: string) => f.replace(EXT, "");
+  const files = readdirSync(dir).filter((f) => EXT.test(f)).sort((a, b) => stem(a).localeCompare(stem(b), undefined, { numeric: true })); // by name without extension, so 05-x comes before 05-x-b
+  const url = (f: string) => `/work/${slug}/${f}`;
   const named = (n: string) => files.find((f) => stem(f).toLowerCase() === n);
   const header = named("header");
   const footer = named("footer");
@@ -44,8 +44,8 @@ export function getProjectImages(slug: string, sectionCount = 0): ProjectImages 
   }
 
   const shots = files
-    .filter((f) => /^\d+$/.test(stem(f)))
-    .sort((a, b) => parseInt(a, 10) - parseInt(b, 10))
+    .filter((f) => SECTION.test(stem(f)))
+    .sort((a, b) => parseInt(stem(a), 10) - parseInt(stem(b), 10))
     .map(url);
   return { header: header && url(header), footer: footer && url(footer), contact: contact && url(contact), shots, sections: [] };
 }

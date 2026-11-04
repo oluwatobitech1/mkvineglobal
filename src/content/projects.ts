@@ -3,7 +3,10 @@
 // Images: drop files into  public/work/<slug>/  and they appear automatically (no code change).
 //   header.(png|jpg|webp)  -> top of the site (also used as the card cover)
 //   footer.(png|jpg|webp)  -> bottom of the site
-//   1, 2, 3 ... .(png|jpg|webp) -> extra screens, shown in numeric order
+//   contact.(png|jpg|webp) -> closing image, just above the contact band
+//   Website projects:  01-<name>.png, 02-<name>.png ... -> the extra screens listed in `screens`, in order
+//   Branding projects: 01-<name>.png ... -> one per item in `servicesDelivered`, matched by position
+//   Run  npm run images:setup  to create every folder and print the exact file names.
 export const projectCategories = ["Branding", "Websites", "Web Applications", "Mobile Applications", "Motion Design", "Video Production"] as const;
 export type ProjectCategory = (typeof projectCategories)[number];
 
@@ -17,6 +20,7 @@ export type Project = {
   summary: string;
   objective?: string;
   servicesDelivered?: string[];
+  screens?: string[]; // website projects: names of the extra screens (after header, before footer), matched by position
   challenge?: string;
   solution?: string;
   outcomes?: string[]; // verified outcomes only
@@ -102,6 +106,7 @@ export const projects: Project[] = [
     summary: "A corporate website for a Nigerian multi-sector group spanning agriculture, technology, energy and real estate.",
     objective: "Present one group with several divisions as a single, credible company online.",
     servicesDelivered: ["Website design"],
+    screens: ["Homepage", "Divisions page"],
     solution:
       "A divisions-led site: a clear homepage, a page for each division (Smart Agriculture, TechSolutions, EnergyWorks and Properties), About and Leadership pages, News & Insights, a filterable Gallery, downloadable registration certificates and easy contact through email and WhatsApp.",
     url: "https://asafhub.com/",
@@ -114,6 +119,7 @@ export const projects: Project[] = [
     summary: "An online shop for personal-care, oral-care and wellness products, with worldwide delivery.",
     objective: "Let customers browse the range and order without needing an account.",
     servicesDelivered: ["Website design"],
+    screens: ["Homepage", "Product catalogue"],
     solution:
       "A simple shop: a searchable product catalogue, featured collections, a cart, a plain four-step 'How it works' guide, and WhatsApp ordering and chat for customers who prefer to talk first.",
     url: "https://emyjaypersonalcareproducts.store",
@@ -126,6 +132,7 @@ export const projects: Project[] = [
     summary: "A website for a Lagos logistics company covering interstate and local delivery, trucking and international express.",
     objective: "Make it quick for businesses and individuals to understand the services and ask for a price.",
     servicesDelivered: ["Website design"],
+    screens: ["Homepage", "Quote and shipping calculator"],
     solution:
       "A service-led site with a quote request form, a shipping calculator, shipment tracking for partner carriers, fleet and 'How it works' sections, shipping guides, customer reviews and a WhatsApp chat widget.",
     url: "https://gramexlogistics.com/",

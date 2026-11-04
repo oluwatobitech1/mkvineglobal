@@ -44,7 +44,7 @@ No email service or API key is needed.
 | Founders, bios, photos | `src/content/team.ts` |
 | Portfolio projects | `src/content/projects.ts` |
 | Client reviews shown on the site | `src/content/reviews.ts` (only reviews the client agreed to show; reviews arrive by email from the form at `/reviews`) |
-| Portfolio pictures | drop `header`, `footer`, `1`, `2`... (png/jpg/webp) into `public/work/<project-slug>/`. They appear automatically |
+| Portfolio pictures | save the named files from `docs/BRANDING-IMAGES.md` into `public/work/<project-slug>/` (header, footer, contact and numbered sections like `05-logo-grid-and-proportion-system.png`). They appear automatically. `npm run images:setup` recreates the folders and the list |
 | Articles | `src/content/posts.ts` |
 | FAQ | `src/content/faqs.ts` |
 | Legal pages (drafts) | `src/content/legal.ts` |

@@ -36,7 +36,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
 
   const shots = [
     ...(img.header ? [{ src: img.header, label: "Header" }] : []),
-    ...img.shots.map((src, i) => ({ src, label: `Screen ${i + 1}` })),
+    ...img.shots.map((src, i) => ({ src, label: p.screens?.[i] ?? `Screen ${i + 1}` })),
     ...(img.footer ? [{ src: img.footer, label: "Footer" }] : []),
   ];
   const facts: [string, string | undefined][] = [
