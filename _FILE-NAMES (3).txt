@@ -1,0 +1,20 @@
+Sunvia: file names for this folder
+========================================
+Save each picture here with exactly these names (png, jpg, webp or avif):
+
+header                                                         Header: top image and the card cover on the Our Work page
+01-logo-research-and-conceptual-exploration                    Logo research and conceptual exploration
+02-logo-sketching-and-ideation                                 Logo sketching and ideation
+03-logo-formation-and-construction                             Logo formation and construction
+04-logo-grid-system-and-geometry                               Logo grid system and geometry
+05-logo-variations-primary-secondary-and-symbol                Logo variations (primary, secondary and symbol)
+06-brand-colour-palette-development                            Brand colour palette development
+07-typography-selection-and-hierarchy                          Typography selection and hierarchy
+08-brand-graphic-elements-and-patterns                         Brand graphic elements and patterns
+09-logo-clear-space-and-minimum-size                           Logo clear space and minimum size
+10-logo-usage-and-placement                                    Logo usage and placement
+11-stationery-design                                           Stationery design
+12-brand-application-mockups                                   Brand application mockups
+13-brand-identity-presentation                                 Brand identity presentation
+footer                                                         Footer: closing image
+contact                                                        Contact: shown just above the contact band

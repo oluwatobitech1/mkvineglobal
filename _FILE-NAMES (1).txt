@@ -1,0 +1,9 @@
+Emyjay Personal Care Products: file names for this folder
+========================================
+Save each picture here with exactly these names (png, jpg, webp or avif):
+
+header                                                         Header: top image and the card cover on the Our Work page
+01-homepage                                                    Homepage
+02-product-catalogue                                           Product catalogue
+footer                                                         Footer: closing image
+contact                                                        Contact: shown just above the contact band
