@@ -9,9 +9,12 @@ const slug = (t) => t.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, 
 
 // One row per image slot for a project: [file name without extension, what it is]
 function slots(p) {
+  const isBrand = p.category === "Branding";
   const rows = [["header", "Header: top image and the card cover on the Our Work page"]];
+  if (!isBrand) rows.push(["main", "Main: the main (home) screen of the website"]);
   const items = p.category === "Branding" ? (p.servicesDelivered ?? []) : (p.screens ?? []);
-  items.forEach((t, i) => rows.push([`${pad(i + 1)}-${slug(t)}`, t]));
+  items.forEach((t, i) => rows.push([`${pad(i + 1)}-${slug(t)}`, isBrand ? t : `${t} (screen ${i + 1})`]));
+  if (!isBrand) rows.push([`${pad(items.length + 1)}-your-extra-screen`, "Optional: add as many extra screens as you like (03, 04, 05...); they appear automatically"]);
   rows.push(["footer", "Footer: closing image"], ["contact", "Contact: shown just above the contact band"]);
   return rows;
 }

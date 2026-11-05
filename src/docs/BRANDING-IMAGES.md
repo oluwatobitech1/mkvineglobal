@@ -73,8 +73,10 @@ Regenerate this list after editing `src/content/projects.ts` with `npm run image
 | # | File name | Section |
 | --- | --- | --- |
 | - | header.png | Header: top image and the card cover on the Our Work page |
-| 01 | 01-homepage.png | Homepage |
-| 02 | 02-divisions-page.png | Divisions page |
+| - | main.png | Main: the main (home) screen of the website |
+| 01 | 01-divisions-page.png | Divisions page (screen 1) |
+| 02 | 02-news-and-insights.png | News and insights (screen 2) |
+| 03 | 03-your-extra-screen.png | Optional: add as many extra screens as you like (03, 04, 05...); they appear automatically |
 | - | footer.png | Footer: closing image |
 | - | contact.png | Contact: shown just above the contact band |
 
@@ -83,8 +85,10 @@ Regenerate this list after editing `src/content/projects.ts` with `npm run image
 | # | File name | Section |
 | --- | --- | --- |
 | - | header.png | Header: top image and the card cover on the Our Work page |
-| 01 | 01-homepage.png | Homepage |
-| 02 | 02-product-catalogue.png | Product catalogue |
+| - | main.png | Main: the main (home) screen of the website |
+| 01 | 01-product-catalogue.png | Product catalogue (screen 1) |
+| 02 | 02-cart-and-ordering.png | Cart and ordering (screen 2) |
+| 03 | 03-your-extra-screen.png | Optional: add as many extra screens as you like (03, 04, 05...); they appear automatically |
 | - | footer.png | Footer: closing image |
 | - | contact.png | Contact: shown just above the contact band |
 
@@ -93,8 +97,10 @@ Regenerate this list after editing `src/content/projects.ts` with `npm run image
 | # | File name | Section |
 | --- | --- | --- |
 | - | header.png | Header: top image and the card cover on the Our Work page |
-| 01 | 01-homepage.png | Homepage |
-| 02 | 02-quote-and-shipping-calculator.png | Quote and shipping calculator |
+| - | main.png | Main: the main (home) screen of the website |
+| 01 | 01-quote-and-shipping-calculator.png | Quote and shipping calculator (screen 1) |
+| 02 | 02-shipment-tracking.png | Shipment tracking (screen 2) |
+| 03 | 03-your-extra-screen.png | Optional: add as many extra screens as you like (03, 04, 05...); they appear automatically |
 | - | footer.png | Footer: closing image |
 | - | contact.png | Contact: shown just above the contact band |
 

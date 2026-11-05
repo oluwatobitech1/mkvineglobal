@@ -7,6 +7,9 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   // Fill these in once verified. Empty values are hidden from the UI.
   contact: { email: "Osenih70@gmail.com", phone: "", whatsapp: "https://wa.me/447523640950", address: "" },
+  // true: every project image slot shows a labelled frame until its picture is uploaded (work in progress).
+  // false: slots without a picture are hidden. Switch to false when you are ready to launch.
+  showImagePlaceholders: true,
   social: {
     instagram: "https://www.instagram.com/mkvine_creative/",
     facebook: "https://www.facebook.com/share/19Sos5weCR/",

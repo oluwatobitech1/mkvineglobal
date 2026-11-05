@@ -19,7 +19,7 @@ export default function Work() {
             <Link href="/start-project" className="btn-primary mt-6">Start a Project</Link>
           </div>
         ) : (
-          <WorkGrid projects={projects.map((p) => { const i = getProjectImages(p.slug, p.category === "Branding" ? (p.servicesDelivered?.length ?? 0) : 0); return { ...p, image: p.image ?? i.header ?? i.shots[0] ?? i.sections.flat()[0] }; })} />
+          <WorkGrid projects={projects.map((p) => { const i = getProjectImages(p.slug, p.category === "Branding" ? (p.servicesDelivered?.length ?? 0) : 0); return { ...p, image: p.image ?? i.header ?? i.main ?? i.shots[0] ?? i.sections.flat()[0] }; })} />
         )}
       </Section>
       <CtaBand />
