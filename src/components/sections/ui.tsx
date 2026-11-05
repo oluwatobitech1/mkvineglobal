@@ -1,3 +1,4 @@
+import { getTeamPhoto } from "@/lib/team-photos";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, Check, Code, Clapperboard, LifeBuoy, Palette, Smartphone } from "lucide-react";
@@ -79,12 +80,20 @@ export function PackageCard({ p }: { p: Package }) {
 
 export function TeamCard({ m, compact = false }: { m: Member; compact?: boolean }) {
   const initials = m.name.split(" ").map((n) => n[0]).join("").slice(0, 2);
+  const photo = m.photo ?? getTeamPhoto(m.name);
   return (
     <article className="lift rounded-xl border border-line bg-card p-6">
       <div className="overflow-hidden rounded-lg">
-        <div className="zoom grid aspect-[4/3] place-items-center bg-bg font-display text-5xl font-extrabold text-brand-muted-text" role="img" aria-label={`Photo of ${m.name} to be added`}>
-          {initials}
-        </div>
+        {photo ? (
+          <div className="zoom aspect-[4/3] bg-bg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photo} alt={`${m.name}, ${m.title}`} loading="lazy" className="h-full w-full object-cover object-top" />
+          </div>
+        ) : (
+          <div className="zoom grid aspect-[4/3] place-items-center bg-bg font-display text-5xl font-extrabold text-brand-muted-text" role="img" aria-label={`Photo of ${m.name} to be added`}>
+            {initials}
+          </div>
+        )}
       </div>
       <h3 className="mt-5 font-display text-xl font-bold">{m.name}</h3>
       <p className="text-sm font-semibold text-accent">{m.title}</p>
