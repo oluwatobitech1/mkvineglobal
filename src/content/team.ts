@@ -1,4 +1,4 @@
-// Approved biographies, supplied by the founders. Add photos (e.g. "/images/team/habeeb.jpg") and verified links when available.
+// Approved biographies, supplied by the founders. Photos: save public/images/team/habeeb-oseni.jpg, adekunle-divine.jpg, oluwatobi-ayodele.jpg (shown automatically) and verified links when available.
 export type Member = {
   name: string;
   title: string;
