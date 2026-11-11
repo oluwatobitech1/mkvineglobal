@@ -6,12 +6,17 @@ import { Footer } from "@/components/layout/Footer";
 import { site } from "@/config/site";
 import { motionScript } from "@/lib/motion";
 import { organizationJsonLd } from "@/lib/seo";
+import { getBrandAsset } from "@/lib/brand";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const display = localFont({ src: "../fonts/bricolage-grotesque.woff2", variable: "--font-display", weight: "200 800", display: "swap" });
 const body = localFont({ src: "../fonts/instrument-sans.woff2", variable: "--font-body", weight: "400 700", display: "swap" });
 
+const ogImage = getBrandAsset("og") ?? "/og.png";
+const favicon = getBrandAsset("favicon");
+
 export const metadata: Metadata = {
+  ...(favicon ? { icons: { icon: favicon } } : {}),
   metadataBase: new URL(site.url),
   title: { default: `${site.name} | Brands, Websites, Apps and Motion`, template: `%s | ${site.name}` },
   description: site.description,
@@ -20,9 +25,9 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
     locale: "en_GB",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${site.name}: brands, websites, apps and motion` }],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: `${site.name}: brands, websites, apps and motion` }],
   },
-  twitter: { card: "summary_large_image", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", images: [ogImage] },
   robots: { index: true, follow: true },
 };
 
@@ -37,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <JsonLd data={organizationJsonLd()} />
-        <Header />
+        <Header logo={getBrandAsset("logo")} />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
       </body>

@@ -16,5 +16,5 @@ export function getBackground(name: BackgroundName): string | undefined {
   const dir = join(process.cwd(), "public", "backgrounds");
   if (!existsSync(dir)) return undefined;
   const file = readdirSync(dir).find((f) => EXT.test(f) && f.replace(EXT, "").toLowerCase() === name);
-  return file ? `/backgrounds/${file}` : undefined;
+  return file ? `/backgrounds/${encodeURIComponent(file)}` : undefined;
 }

@@ -11,5 +11,5 @@ export function getTeamPhoto(name: string): string | undefined {
   if (!existsSync(dir)) return undefined;
   const key = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const file = readdirSync(dir).find((f) => EXT.test(f) && f.replace(EXT, "").toLowerCase() === key);
-  return file ? `/images/team/${file}` : undefined;
+  return file ? `/images/team/${encodeURIComponent(file)}` : undefined;
 }

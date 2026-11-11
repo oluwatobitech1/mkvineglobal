@@ -9,7 +9,7 @@ import { Logo } from "./Logo";
 
 const isActive = (path: string, href: string) => (href === "/" ? path === "/" : path.startsWith(href));
 
-export function Header() {
+export function Header({ logo }: { logo?: string | null }) {
   const pathname = usePathname();
   // The menu counts as open only on the page where it was opened, so it closes on navigation.
   const [openedOn, setOpenedOn] = useState<string | null>(null);
@@ -35,7 +35,7 @@ export function Header() {
     <>
     <header className="site-header sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Logo />
+        <Logo src={logo} />
 
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
           {nav.filter((n) => n.href !== "/").map((item) => (
@@ -75,7 +75,7 @@ export function Header() {
       {open && (
         <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" className="fixed inset-0 z-50 flex flex-col bg-bg px-5 py-4 lg:hidden">
           <div className="flex h-12 items-center justify-between">
-            <Logo />
+            <Logo src={logo} />
             <button ref={closeRef} type="button" aria-label="Close menu" className="grid h-10 w-10 place-items-center rounded-md border border-line" onClick={() => setOpen(false)}>
               <X size={20} />
             </button>

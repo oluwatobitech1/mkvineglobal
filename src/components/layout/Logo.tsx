@@ -1,16 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
 
-// Temporary text logo. To use the approved logo, drop the file in /public/images
-// and pass its path via the `src` prop (or set LOGO_SRC below).
-const LOGO_SRC: string | null = null;
-
+// Presentational only (it also runs in the client Header). layout.tsx finds the file and passes it as `src`.
+// Text logo until you add a file: save your logo as  public/brand/logo.svg  (or .png / .webp)  and it replaces this everywhere.
 // The logo reads just "MKVine" on every page.
-export function Logo({ src = LOGO_SRC }: { src?: string | null }) {
+export function Logo({ src }: { src?: string | null }) {
   return (
     <Link href="/" className="inline-flex items-center gap-2" aria-label="MKVine home">
       {src ? (
-        <Image src={src} alt="MKVine" width={140} height={36} priority />
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt="MKVine" className="h-9 w-auto max-w-[180px] object-contain" />
       ) : (
         <>
           <span aria-hidden className="grid h-8 w-8 place-items-center rounded-md bg-accent font-display text-lg font-extrabold text-black">

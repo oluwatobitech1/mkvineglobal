@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Logo } from "./Logo";
+import { getBrandAsset } from "@/lib/brand";
 import { SocialIcon } from "./SocialIcon";
 import { site, company, socialLabels, nav, serviceLinks, legalLinks } from "@/config/site";
 
@@ -12,7 +13,7 @@ export function Footer() {
     <footer className="border-t border-line bg-bg-2">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
         <div className="max-w-sm">
-          <Logo />
+          <Logo src={getBrandAsset("logo")} />
           <p className="mt-4 text-sm leading-relaxed text-muted">{site.description}</p>
         </div>
 

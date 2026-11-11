@@ -51,9 +51,7 @@ No email service or API key is needed.
 | Estimator options and questions | `src/config/estimator.ts` |
 | Colours | the variables at the top of `src/app/globals.css` |
 | Animation speeds and distances | the Motion section of `src/app/globals.css` |
-| Logo | `src/components/layout/Logo.tsx` (set `LOGO_SRC`) |
-| Share image | `public/og.png` |
-| Browser icon | `src/app/icon.svg` |
+| Logo, browser icon, share image | drop `logo.svg`, `favicon.png`, `og.png` into `public/brand/`. They appear on the whole site automatically |
 
 New pages are added to the sitemap by listing them in `publicPaths()` in `src/lib/seo.ts`.
 
@@ -90,3 +88,9 @@ There is no server to protect. The forms still check every field in the browser 
 ## Before launch
 
 Work through `docs/LAUNCH-CHECKLIST.md` and follow `docs/DEPLOYMENT.md`.
+
+
+## Why an upload might not show (and what now happens automatically)
+
+Pictures are read when the site is built, so after adding pictures run `npm run dev` (restart it) or `npm run build:static` again.
+`npm run dev`, `build` and `build:static` first run `scripts/sync-images.mjs`, which fixes pictures saved with no extension, a wrong or capital extension, or spaces in the name. Pictures in `public/work/<project>/` whose name fits no slot are still shown as extra sections at the end of that project. To place one exactly, use the names in `src/docs/BRANDING-IMAGES.md`.

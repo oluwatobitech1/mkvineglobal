@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "images:sync": "node scripts/sync-images.mjs",
+    "predev": "node scripts/sync-images.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-images.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "prebuild:static": "node scripts/sync-images.mjs",
     "build:static": "node scripts/build-static.mjs",
     "images:setup": "node --experimental-strip-types scripts/image-guide.mjs"
   },
