@@ -1,0 +1,11 @@
+Emyjay Personal Care Products: file names for this folder
+========================================
+Save each picture here with exactly these names (png, jpg, webp or avif):
+
+header                                                         Header: top image and the card cover on the Our Work page
+main                                                           Main: the main (home) screen of the website
+01-product-catalogue                                           Product catalogue (screen 1)
+02-cart-and-ordering                                           Cart and ordering (screen 2)
+03-your-extra-screen                                           Optional: add as many extra screens as you like (03, 04, 05...); they appear automatically
+footer                                                         Footer: closing image
+contact                                                        Contact: shown just above the contact band
