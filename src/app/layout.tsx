@@ -13,7 +13,7 @@ const display = localFont({ src: "../fonts/bricolage-grotesque.woff2", variable:
 const body = localFont({ src: "../fonts/instrument-sans.woff2", variable: "--font-body", weight: "400 700", display: "swap" });
 
 const ogImage = getBrandAsset("og") ?? "/og.png";
-const favicon = getBrandAsset("favicon");
+const favicon = getBrandAsset("favicon") ?? getBrandAsset("logo");
 
 export const metadata: Metadata = {
   ...(favicon ? { icons: { icon: favicon } } : {}),

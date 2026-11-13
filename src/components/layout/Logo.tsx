@@ -8,7 +8,7 @@ export function Logo({ src }: { src?: string | null }) {
     <Link href="/" className="inline-flex items-center gap-2" aria-label="MKVine home">
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt="MKVine" className="h-9 w-auto max-w-[180px] object-contain" />
+        <img src={src} alt="MKVine" className="h-11 w-auto max-w-[240px] object-contain sm:h-14 sm:max-w-[300px]" />
       ) : (
         <>
           <span aria-hidden className="grid h-8 w-8 place-items-center rounded-md bg-accent font-display text-lg font-extrabold text-black">
